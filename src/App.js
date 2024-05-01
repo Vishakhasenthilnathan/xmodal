@@ -46,6 +46,12 @@ function App() {
         // setPhone("");
         // setDob("");
     }
+
+    const handleOutsideClick = (e) => {
+        if (e.target.className === 'modal') {
+            setIsOpen(false);
+        }
+    }
     return (
         <div className="App">
             <h1>User Details Modal</h1>
@@ -56,6 +62,7 @@ function App() {
                 // onAfterOpen={afterOpenModal}
                 // onRequestClose={closeModal}
                 style={customStyles}
+                onClick={handleOutsideClick}
             >
                 <div className="modal-content">
                     <h2>Fill Details</h2>
